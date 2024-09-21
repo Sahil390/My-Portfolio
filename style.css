@@ -6,7 +6,7 @@
 
 body {
     margin: 0;
-    font-family: Inter, sans-serif;
+    font-family: roboto, sans-serif;
     color: white;
     background: black;
 }
@@ -92,10 +92,6 @@ main{
     align-items: center;
     flex-direction: column;
     margin-top: 10%;
-    transition: transform 0.2s;
-}
-#profile:hover {
-    transform: scale(1.1);
 }
 #profile > img {
     width: max(10rem, 18vw);
@@ -106,6 +102,7 @@ main{
     font-size: 2em;
     margin-top: 50px;
     margin-bottom: 20px;
+    color: #FFA500;
 }
 #Left-intro > h3 {
     font-size: 1.3em;
@@ -187,6 +184,7 @@ main{
     font-size: 3em;
     margin-top: 50px;
     margin-bottom: 60px;
+    color: #FFA500;
 }
 
 #Right-intro > #intro-text > p {
@@ -204,6 +202,7 @@ main{
 
 #Education > h1,#skills > h1 {
     font-size: 4em;
+    color: #FFA500;
     
 }
 
@@ -255,7 +254,7 @@ main{
     max-width: 600px;
     margin-bottom: 20px;
     padding: 20px;
-    background-color: #111;
+    background-color: #333;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     transition: transform 0.2s;
@@ -292,6 +291,7 @@ main{
 #contact {
     text-align: center;
     font-size: 2em;
+    color: #FFA500;
 }
 
 #contact-container {
@@ -312,7 +312,6 @@ main{
 
 .contact h1 {
     font-size: 24px;
-    color: #f9f9f9;
     margin-bottom: 10px;
 }
 
