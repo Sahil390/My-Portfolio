@@ -1,14 +1,24 @@
 @media (prefers-reduced-motion: no-preference) {
     * {
-      scroll-behavior: smooth;
+        scroll-behavior: smooth;
     }
-  }
+}
 
 body {
     margin: 0;
     font-family: "Roboto", sans-serif;
     color: white;
     background: black;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 header {
@@ -23,25 +33,36 @@ header {
     position: fixed;
     border-radius: 10px;
     margin: 10px 20px;
-    
+    animation: slideDown 0.5s ease-in-out;
 }
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 header > h1 {
     font-size: min(15vw, 1.6em);
     text-align: center;
     margin: 5%;
-  }
+}
 
 h1 > a {
     color: inherit;
     text-decoration: none;
-  } 
+}
+
 nav {
     width: 50%;
     max-width: 500px;
     height: 50px;
-  }
-  
-  nav > ul {
+}
+
+nav > ul {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -49,28 +70,29 @@ nav {
     padding-inline-start: 0;
     margin-block: 0;
     height: 100%;
-  }
-  
-  nav > ul > li {
+}
+
+nav > ul > li {
     color: white;
     margin: 0 0.2rem;
     padding: 0.01rem;
     display: block;
     transition: transform 0.2s;
-  }
-  
-  nav > ul > li:hover {
+}
+
+nav > ul > li:hover {
     cursor: pointer;
     transform: translateY(-5px);
-  }
-  
-  li > a {
+}
+
+li > a {
     color: inherit;
     text-decoration: none;
-  }
-  
-main{
+}
+
+main {
     padding-top: 90px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 #intro {
@@ -78,7 +100,7 @@ main{
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 10%;
-
+    animation: fadeIn 1s ease-in-out;
 }
 
 #Left-intro {
@@ -86,6 +108,7 @@ main{
     text-align: center;
     align-items: center;
 }
+
 #profile {
     display: flex;
     justify-content: center;
@@ -93,9 +116,11 @@ main{
     flex-direction: column;
     margin-top: 10%;
 }
+
 #profile > img {
     width: max(10rem, 18vw);
     border-radius: 20%;
+    animation: fadeIn 1s ease-in-out;
 }
 
 #Left-intro > h1 {
@@ -104,12 +129,14 @@ main{
     margin-bottom: 20px;
     color: #FFA500;
 }
+
 #Left-intro > h3 {
     font-size: 1.3em;
     font-weight: 400;
     margin: 0;
     font-style: italic;
 }
+
 #Left-intro > #email, #Right-intro > #resume {
     max-width: 250px;
     min-width: 150px;
@@ -117,8 +144,9 @@ main{
     border: 1px solid white;
     background-color: white;
     margin: 50px auto;
-    transition: transform 0.2s;;
+    transition: transform 0.2s;
 }
+
 #Left-intro > #email:hover, #Right-intro > #resume:hover {
     transform: scale(1.1);
     background-color: #f0f0f0;
@@ -136,13 +164,12 @@ main{
 }
 
 #social {
-    
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-
 }
+
 #social > ul {
     display: flex;
     justify-content: center;
@@ -152,6 +179,7 @@ main{
     height: 100%;
     list-style: none;
 }
+
 #social > ul > li {
     color: white;
     margin: 0 0.2rem;
@@ -159,6 +187,7 @@ main{
     display: block;
     transition: transform 0.2s;
 }
+
 #social > ul > li:hover {
     cursor: pointer;
     transform: translateY(-5px);
@@ -167,6 +196,7 @@ main{
 #social > ul > li > a > img {
     width: 70px;
     height: 70px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 #Right-intro {
@@ -177,10 +207,10 @@ main{
     align-items: center;
     border: 80px ridge transparent;
     border-radius: 40px;
-    /* padding: 20px; */
+    animation: fadeIn 1s ease-in-out;
 }
 
-#Right-intro > #intro-text >h1 {
+#Right-intro > #intro-text > h1 {
     font-size: 3em;
     margin-top: 50px;
     margin-bottom: 60px;
@@ -191,34 +221,36 @@ main{
     font-size: 1.2em;
     font-weight: 400;
     margin: 0;
-    /* font-style: italic; */
 }
 
-#Education,#skills {
+#Education, #skills {
     text-align: center;
     line-height: 0.7;
     margin: 10% auto;
+    animation: fadeIn 1s ease-in-out;
 }
 
-#Education > h1,#skills > h1 {
+#Education > h1, #skills > h1 {
     font-size: 4em;
     color: #FFA500;
-    
 }
 
-#Education .education,#skills .skillset  {
+#Education .education, #skills .skillset {
     font-size: 1.3em;
     font-style: italic;
 }
-#Education > a > img, #Education > #education-container > #school_logo >a > img  {
+
+#Education > a > img, #Education > #education-container > #school_logo > a > img {
     width: 200px;
     height: auto;
     transition: transform 0.2s;
 }
-#Education > #education-container > #school_logo >a > img {
-    width: 120px; 
+
+#Education > #education-container > #school_logo > a > img {
+    width: 120px;
 }
-#Education > a:hover > img,#Education > #education-container > #school_logo >a:hover > img  {
+
+#Education > a:hover > img, #Education > #education-container > #school_logo > a:hover > img {
     transform: scale(1.1);
 }
 
@@ -228,8 +260,8 @@ main{
 }
 
 #Project {
-
     align-items: center;
+    animation: fadeIn 1s ease-in-out;
 }
 
 #Project > img {
@@ -288,10 +320,11 @@ main{
     background-color: #0056b3;
 }
 
-#contact {
+#conta  ct {
     text-align: center;
     font-size: 2em;
     color: #FFA500;
+    animation: fadeIn 1s ease-in-out;
 }
 
 #contact-container {
@@ -300,14 +333,12 @@ main{
     align-items: center;
     flex-direction: column;
     padding: 20px;
-    /* background-color: #333; */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact {
     text-align: center;
-    /* margin: 20px 0; */
 }
 
 .contact h1 {
