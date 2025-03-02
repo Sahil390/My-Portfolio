@@ -351,3 +351,198 @@ main {
     color: #ccc;
     margin-bottom: 5px;
 }
+
+/* Sidebar styles */
+#sidebar {
+    display: none; /* Hide sidebar by default */
+    position: fixed;
+    top: 0;
+    left: -250px; /* Position off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(45, 50, 54, 0.9);
+    padding-top: 60px;
+    z-index: 1000;
+    transition: left 0.3s ease; /* Slide transition */
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+#sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+    display: none; /* Hide by default */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(45, 50, 54, 0.8);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Media query for phones */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+
+    header > h1 {
+        font-size: 1.2em;
+        margin: 10px 0;
+    }
+
+    nav {
+        display: none; /* Hide the original nav bar */
+    }
+
+    #sidebar {
+        display: block; /* Show sidebar on mobile devices */
+    }
+
+    .sidebar-toggle {
+        display: block; /* Show sidebar toggle button on mobile devices */
+    }
+
+    #intro {
+        flex-direction: column;
+        margin-bottom: 20%;
+        text-align: center;
+    }
+
+    #Left-intro, #Right-intro {
+        width: 100%;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    #profile > img {
+        width: 80%;
+    }
+
+    #Left-intro > h1 {
+        font-size: 1.5em;
+    }
+
+    #Left-intro > h3 {
+        font-size: 1em;
+    }
+
+    #Left-intro > #email, #Right-intro > #resume {
+        width: 80%;
+        height: 35px;
+    }
+
+    #social > ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #social > ul > li {
+        margin: 10px 0;
+    }
+
+    #Right-intro {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #Right-intro > #intro-text > h1 {
+        font-size: 2em;
+    }
+
+    #Right-intro > #intro-text > p {
+        font-size: 1em;
+    }
+
+    #Education, #skills {
+        margin: 20% auto;
+        text-align: center;
+    }
+
+    #Education > h1, #skills > h1 {
+        font-size: 2em;
+    }
+
+    #Education .education, #skills .skillset {
+        font-size: 1em;
+    }
+
+    #Education > a > img, #Education > #education-container > #school_logo > a > img {
+        width: 100px;
+    }
+
+    #skills > img {
+        width: 100px;
+    }
+
+    #Project > img {
+        width: 200px;
+    }
+
+    .project {
+        width: 90%;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .project h2 {
+        font-size: 1.2em;
+    }
+
+    .project p {
+        font-size: 0.9em;
+    }
+
+    .project-link {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+
+    #contact {
+        font-size: 1.5em;
+    }
+
+    #contact-container {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .contact h1 {
+        font-size: 1.2em;
+    }
+
+    .contact h3 {
+        font-size: 0.9em;
+    }
+}
