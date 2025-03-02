@@ -352,55 +352,7 @@ main {
     margin-bottom: 5px;
 }
 
-/* Sidebar styles */
-#sidebar {
-    display: none; /* Hide sidebar by default */
-    position: fixed;
-    top: 0;
-    left: -250px; /* Position off-screen */
-    width: 250px;
-    height: 100%;
-    background-color: rgba(45, 50, 54, 0.9);
-    padding-top: 60px;
-    z-index: 1000;
-    transition: left 0.3s ease; /* Slide transition */
-}
 
-#sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#sidebar ul li {
-    padding: 10px;
-    text-align: center;
-}
-
-#sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s;
-}
-
-#sidebar ul li a:hover {
-    background-color: #575757;
-}
-
-/* Sidebar toggle button */
-.sidebar-toggle {
-    display: none; /* Hide by default */
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    background-color: rgba(45, 50, 54, 0.8);
-    color: white;
-    border: none;
-    padding: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1001;
-}
 
 /* Media query for phones */
 @media (max-width: 600px) {
@@ -414,24 +366,21 @@ main {
         height: auto;
         padding: 10px;
         text-align: center;
+        width: 100%;
+        border-radius: 0%;
+        margin: 0;
     }
 
     header > h1 {
-        font-size: 1.2em;
+        font-size: 1.8em;
         margin: 10px 0;
     }
 
     nav {
-        display: none; /* Hide the original nav bar */
+        width: 100%;
+        margin: 0;
     }
 
-    #sidebar {
-        display: block; /* Show sidebar on mobile devices */
-    }
-
-    .sidebar-toggle {
-        display: block; /* Show sidebar toggle button on mobile devices */
-    }
 
     #intro {
         flex-direction: column;
@@ -440,8 +389,10 @@ main {
     }
 
     #Left-intro, #Right-intro {
-        width: 100%;
+        max-width: 100%;
+        min-width: 60%;
         margin: 10px 0;
+        
         text-align: center;
     }
 
@@ -463,12 +414,16 @@ main {
     }
 
     #social > ul {
-        flex-direction: column;
+        flex-direction: row; /* Change to row for inline display */
         align-items: center;
+        justify-content: center; /* Center the icons */
+        padding-inline-start: 0;
+        margin-block: 0;
+        list-style: none;
     }
 
     #social > ul > li {
-        margin: 10px 0;
+        margin: 0 0.5rem; /* Adjust margin for spacing */
     }
 
     #Right-intro {
