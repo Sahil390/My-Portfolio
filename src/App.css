@@ -1,0 +1,492 @@
+/* Header component */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  
+  /* Initial states for transition */
+  background-color: rgba(36, 39, 52, 0);
+  backdrop-filter: blur(0px);
+  border-radius: 0px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0);
+  
+  /* Explicitly define transitions for a smoother animation */
+  transition: top 0.4s ease, width 0.4s ease, background-color 0.4s ease, backdrop-filter 0.4s ease, border-radius 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+}
+
+.header-container.scrolled {  
+  top: 20px;
+  width: 90%;
+  max-width: 1200px;
+  background-color: rgba(36, 39, 52, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2.5rem;
+}
+
+.logo {
+  position: relative;
+  overflow: hidden;
+}
+
+.logo a {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  border: 2px solid #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.logo-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.logo-ahil, .logo-arang {
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width 0.5s ease-in-out;
+  vertical-align: bottom;
+}
+
+@media (hover: hover) {
+  .logo:hover .logo-ahil,
+  .logo:hover .logo-arang {
+    max-width: 100px; /* Adjust as needed */
+  }
+}
+
+.nav-links a {
+  margin-left: 2rem;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fca311;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fca311;
+  transform: translateY(-2px);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+
+
+/* Hero Component */
+
+.hero-container {
+  position: sticky;
+  top: 0;
+  color: #ffffff;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  min-height: 100vh; /* Make container take full viewport height */
+  padding: 2rem 5%;
+  padding-top: 0;
+  /* Remove background-color to let Vanta.js handle it */
+  z-index: 5;
+  will-change: transform;
+  background: transparent;
+  overflow: hidden;
+}
+
+.hero-text-container {
+  position: absolute; /* Position text over the image */
+  z-index: 2; /* Ensure text is on top */
+  text-align: left;
+  max-width: 50%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  backdrop-filter: blur(3px); /* Add blur effect */
+  padding: 2rem;
+  border-radius: 10px;
+  left: 5%; /* Position on the left side */
+  top: 20%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeInContainer 1s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInContainer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-text-container:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  transform: translateY(-5px);
+  /* box-shadow: 0 10px 30px rgba(252, 163, 17, 0.2); */
+}
+
+.hero-text h2 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(40, end);
+}
+
+.hero-text h3 {
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 2.5s forwards;
+}
+
+.hero-description p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 3.5s forwards;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 4.5s forwards;
+  margin-top: 2rem;
+}
+
+.hero-cta .btn-primary {
+  background-color: #b88a2b;
+  color: #fffbe6;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+ .hero-cta .btn-primary:hover {
+  background-color: #a07a24;
+  color: #fffbe6;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 12px rgba(184, 138, 43, 0.18);
+}
+
+.hero-cta .btn-secondary {
+  background-color: transparent;
+  color: #b88a2b;
+  border: 2px solid #b88a2b;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+ .hero-cta .btn-secondary:hover {
+  background-color: #b88a2b;
+  color: #fffbe6;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 12px rgba(184, 138, 43, 0.18);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fca311;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-image-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.hero-image {
+  width: 20%;
+  height: 50%;
+  object-fit: cover; /* Make image cover the container */
+  position: absolute; /* Position relative to container */
+  top: 30%;
+  right: 10%;
+  z-index: 1; /* Place image behind the text */
+  border-radius: 50px; /* Rounded corners for the image */
+  border: 20px solid rgba(50, 54, 71, 0.5); /* Semi-transparent border */
+  /* Add blur to border using box-shadow and backdrop-filter */
+  box-shadow: 0 0 0 10px rgba(50, 54, 71, 0.2);
+  backdrop-filter: blur(6px);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* opacity: 0; */
+  /* transform: scale(0.92); */
+  /* animation: heroImageReveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) 1.2s forwards; */
+}
+
+.hero-image:hover {
+  transform: scale(1.12);
+  z-index: 2;
+}
+
+@keyframes heroImageReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.hero-image:hover {
+  transform: scale(1.12);
+  z-index: 2;
+}
+
+
+/* -- Responsive Design -- */
+@media (max-width: 1050px) {
+  .hero-text-container {
+    max-width: 100%;
+    left: 10%;
+    right: 10%;
+    text-align: center;
+  }
+
+  .hero-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text h3 {
+    font-size: 1.2rem;
+  }
+
+}
+
+@media (max-width: 1100px) {
+  .hero-container {
+    min-height: 80vh; /* Reduce height for smaller screens */
+  }
+
+  .hero-text-container {
+    
+    max-width: 90%;
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
+    top: 60%;
+    padding: 1.5rem;
+  }
+
+  .hero-text h2 {
+    font-size: 2rem;
+  }
+
+  .hero-text h3 {
+    font-size: 1rem;
+  }
+
+  .hero-description p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero-cta {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .hero-cta .btn-primary,
+  .hero-cta .btn-secondary {
+    display: inline;
+    width: 20%;
+    margin: 1rem;
+    margin-right: 0;
+  }
+
+  .hero-image {
+    /* opacity: 0.4; */
+    /* width: 100%; */
+    /* object-position: right; */
+    /* object-position: 75% 50%; */
+    left: 25%;
+    width: 50%;
+    height: 40%;
+    top: 5%;
+    border-radius: 10%;
+
+  }
+}
+
+/* Education Component */
+
+/* --- Mobile Navigation Styles --- */
+
+/* Menu Icon (Hamburger) */
+.menu-icon {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  z-index: 2001; /* Ensure it's clickable */
+}
+
+.menu-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* Side Panel */
+.side-panel {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 2000; /* Higher than header */
+  top: 0;
+  right: 0;
+  background-color: rgba(36, 39, 52, 0.9); /* #242734 with transparency */
+  backdrop-filter: blur(20px);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-panel.open {
+  transform: translateX(0);
+}
+
+.close-icon {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.side-panel-links {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  align-items: center;
+}
+
+.side-panel-links a {
+  padding: 1.5rem 0;
+  font-size: 2rem;
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 80%;
+  border-bottom: 2px solid #3a3d4a;
+  position: relative;
+}
+
+.side-panel-links a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #fca311;
+  transition: width 0.3s ease;
+  transform: translateY(-50%);
+}
+
+.side-panel-links a:hover {
+  color: #fca311;
+  border-bottom-color: #fca311;
+  transform: translateX(10px);
+}
+
+.side-panel-links a:hover::before {
+  width: 30px;
+}
+
+.side-panel-links a:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 1000px) {
+  .nav-links {
+    display: none; /* Hide original nav links */
+  }
+
+  .menu-icon {
+    display: block; /* Show hamburger icon */
+  }
+}
