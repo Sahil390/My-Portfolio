@@ -71,7 +71,7 @@ function SkillProgress() {
   }, []);
 
   return (
-    <section className="skill-progress-section" ref={ref}>
+    <section className="skill-progress-section" id="Skills" ref={ref}>
       <h2 className="skill-title">My Skills</h2>
       <div className="skill-boxes">
         {skillsData.map((cat, idx) => (
