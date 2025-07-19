@@ -5,7 +5,7 @@ function Projects() {
   return (
     <section
       className="projects-section"
-      id="Projects"
+      id="Projectes"
     >
       <h2 className="projects-title" style={{
         fontSize: '2.8rem',
