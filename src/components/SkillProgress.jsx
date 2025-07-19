@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './SkillProgress.css';
+
 
 const skillsData = [
   {
@@ -33,15 +33,7 @@ const skillsData = [
       { name: 'Creativity', level: 85 },
     ],
   },
-  {
-    category: 'Database',
-    color: '#2ec4b6',
-    skills: [
-      { name: 'MongoDB', level: 75 },
-      { name: 'MySQL', level: 70 },
-      { name: 'Firebase', level: 65 },
-    ],
-  },
+  // Removed Database category, moved MySQL to Other
   {
     category: 'Other',
     color: '#e63946',
@@ -49,6 +41,7 @@ const skillsData = [
       { name: 'Linux', level: 80 },
       { name: 'Git', level: 85 },
       { name: 'Figma', level: 70 },
+      { name: 'MySQL', level: 70 },
     ],
   },
 ];
@@ -56,13 +49,21 @@ const skillsData = [
 function SkillProgress() {
   const ref = useRef();
   const [inView, setInView] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       if (!ref.current) return;
       const rect = ref.current.getBoundingClientRect();
+      // Trigger animation when section is in view
       if (rect.top < window.innerHeight - 100) {
         setInView(true);
+      }
+      // Fullscreen effect when section is near top of viewport
+      if (rect.top < 40 && rect.bottom > 200) {
+        setFullscreen(true);
+      } else {
+        setFullscreen(false);
       }
     };
     window.addEventListener('scroll', handleScroll);
@@ -71,7 +72,11 @@ function SkillProgress() {
   }, []);
 
   return (
-    <section className="skill-progress-section" id="Skills" ref={ref}>
+    <section
+      className={`skill-progress-section${fullscreen ? ' fullscreen' : ''}`}
+      id="Skills"
+      ref={ref}
+    >
       <h2 className="skill-title">My Skills</h2>
       <div className="skill-boxes">
         {skillsData.map((cat, idx) => (
