@@ -50,7 +50,7 @@ const Hero = () => {
           </p>
         </div>
         <div className="hero-cta">
-          <a href="#projects" className="btn-primary">View Projects</a>
+          <a href="#Projects" className="btn-primary">View Projects</a>
           <a href="/resume.pdf" className="btn-secondary" target="_blank" rel="noopener noreferrer">Download Resume</a>
         </div>
       </div>
