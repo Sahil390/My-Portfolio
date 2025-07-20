@@ -637,7 +637,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   width: 100%;
   z-index: 20;
   box-sizing: border-box;
-  
   /* Initial states for transition */
   background-color: rgba(36, 39, 52, 0);
   backdrop-filter: blur(0px);
@@ -648,13 +647,25 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   transition: top 0.4s ease, width 0.4s ease, background-color 0.4s ease, backdrop-filter 0.4s ease, border-radius 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
 }
 
-.header-container.scrolled {  
-  background-color: rgba(36, 39, 52, 0.8);
-  backdrop-filter: blur(10px);
+
+
+.nav-buttons {
+  display: flex;
+  width: 33%;
+  /* justify-content: center; */
+  backdrop-filter: blur(19px);
+  border-radius: 15px;
+  height: 50px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  /* gap: 1.5rem; */
+  transition: all 0.3s ease;
+}
+.nav-buttons.scrolled {
+  background-color: rgba(36, 39, 52, 0.9);
+  backdrop-filter: blur(16px);
   border-radius: 50px;
-  box-shadow: 0; 
-  width: 90%;
-  top: 10px; /* Adjusted to keep header visible */
 }
 
 .logo {
@@ -695,6 +706,8 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 .nav-links a {
   margin-left: 2rem;
+  /* left: 10px; */
+  right: 0;
   font-size: 1.1rem;
   color: #e0e0e0;
   text-decoration: none;

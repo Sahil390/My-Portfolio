@@ -34,12 +34,14 @@ const Header = () => {
             </span>
           </a>
         </div>
-        <nav className="nav-links">
+        <div className={`nav-buttons ${isScrolled ? 'scrolled' : ''}`}>
+        <nav className={'nav-links'}>
           <a href="#Skills">Skills</a>
           <a href="#Projects">Projects</a>
           <a href='#Experience'>Experience</a>
           <a href="#Contact">Contact</a>
         </nav>
+        </div>
         <div className="menu-icon" onClick={toggleMenu}>
           <div />
           <div />
