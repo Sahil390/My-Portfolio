@@ -1082,246 +1082,118 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   background: #242734;
   width: 100%;
   display: flex;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
-  padding: 6vw 0 6vw 0;
+  padding: 4vw 0 6vw 0;
   margin-top: 0;
-  box-shadow: 0 -40px 80px -30px #242734cc;
-}
-
-.experience-title {
-  font-size: 2.8rem;
-  color: #fffbe6;
-  margin-bottom: 2.5rem;
-  letter-spacing: 2px;
-  font-weight: 700;
-  text-shadow: 0 2px 16px #000a;
-  text-align: center;
-}
-
-.experience-container {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  gap: 3.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.experience-part {
-  background: #23243a;
-  border-radius: 32px;
-  box-shadow: 0 8px 40px #0007;
-  padding: 2.2rem 2.5rem;
-  min-width: 320px;
-  max-width: 500px;
-  flex: 1 1 340px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-}
-
-.experience-part-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #fca311;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 12px #000a;
-}
-
-.experience-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.experience-item {
-  background: #181a22;
-  border-radius: 14px;
-  box-shadow: 0 4px 24px #0005;
-  padding: 1.2rem 1.5rem;
-  color: #fffbe6;
-  margin-bottom: 0.5rem;
-}
-
-.experience-role {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #7ecbff;
-  margin-bottom: 0.3rem;
-}
-
-.experience-company {
-  font-size: 1.05rem;
-  color: #fca311;
-  font-weight: 500;
-  margin-bottom: 0.2rem;
-}
-
-.experience-duration {
-  font-size: 0.98rem;
-  color: #b8b8b8;
-  margin-bottom: 0.5rem;
-}
-
-.experience-desc {
-  font-size: 1.05rem;
-  color: #fffbe6;
-  line-height: 1.6;
-}
-
-/* --- Experience Timeline Section Styles --- */
-.experience-section {
-  background: #242734;
+  /* box-shadow: 0 -40px 80px -30px #242734cc; */
   position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 6vw 0 10vw 0;
-  top: -65px;
-  
   z-index: 10;
 }
 
 .experience-title {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   color: #fffbe6;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.2rem;
   letter-spacing: 2px;
   font-weight: 700;
   text-shadow: 0 2px 16px #000a;
-  text-align: center;
-}
-
-.timeline-container {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 0;
-}
-
-.timeline-line {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(to bottom, #fca311 0%, #23243a 100%);
-  transform: translateX(-50%);
-  z-index: 0;
-  border-radius: 2px;
-}
-
-.timeline-item {
-  position: relative;
-  width: 50%;
-  padding: 1.5rem 2rem;
-  box-sizing: border-box;
-}
-
-.timeline-item-left {
-  left: 0;
-  text-align: right;
-}
-
-.timeline-item-right {
-  left: 50%;
   text-align: left;
+  padding-bottom: 20px;
 }
 
-.timeline-content {
-  background: #23243a;
-  border-radius: 18px;
-  box-shadow: 0 8px 40px #0007;
-  padding: 1.5rem 2rem;
-  display: inline-block;
-  position: relative;
-  min-width: 260px;
-  max-width: 400px;
-}
-
-.timeline-dot {
-  position: absolute;
-  top: 2.5rem;
-  width: 22px;
-  height: 22px;
-  background: #fca311;
-  border-radius: 50%;
-  border: 4px solid #fffbe6;
-  left: 100%;
-  transform: translate(-50%, 0);
-  z-index: 2;
-  box-shadow: 0 2px 12px #0005;
-}
-
-.timeline-item-right .timeline-dot {
-  left: 0;
-  transform: translate(-50%, 0);
-}
-
-.timeline-item-left .timeline-dot {
-  right: 0;
-  left: auto;
-  transform: translate(50%, 0);
-}
-
-.timeline-role {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #7ecbff;
-  margin-bottom: 0.3rem;
-}
-
-.timeline-company {
-  font-size: 1.05rem;
+.experience-subtitle {
+  font-size: 1.2rem;
   color: #fca311;
-  font-weight: 500;
+  font-weight: 600;
+  margin: 2rem 0 0.5rem 0; /* 2rem top margin for spacing */
+  letter-spacing: 1px;
+}
+
+.experience-volunteer-subtitle {
+  margin-top: 4.5rem;
+}
+
+.experience-flex {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 3rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.experience-list-modern {
+  flex: 1 1 60%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.experience-right-placeholder {
+  flex: 1 1 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fffbe6;
+  font-size: 2rem;
+  min-height: 300px;
+  padding-top: 150px;
+}
+
+
+.experience-modern-row-minimal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2.2rem 0 1.2rem 0;
+}
+
+.experience-modern-role-minimal {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #fffbe6;
   margin-bottom: 0.2rem;
 }
 
-.timeline-duration {
-  font-size: 0.98rem;
+.experience-modern-company-minimal {
+  font-size: 1.1rem;
   color: #b8b8b8;
-  margin-bottom: 0.5rem;
+  font-weight: 400;
 }
 
-.timeline-desc {
-  font-size: 1.05rem;
-  color: #fffbe6;
-  line-height: 1.6;
+.experience-modern-duration-minimal {
+  font-size: 1.15rem;
+  color: #b8b8b8;
+  font-weight: 400;
+  min-width: 120px;
+  text-align: right;
+  margin-top: 0.2rem;
 }
 
-@media (max-width: 900px) {
-  .timeline-container {
-    padding: 0;
+.experience-divider-minimal {
+  border: none;
+  border-top: 1.5px solid #444;
+  margin: 0 0 0 0;
+  width: 100%;
+  opacity: 0.3;
+}
+
+@media (max-width: 700px) {
+  .experience-modern-row-minimal {
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1.2rem 0 0.7rem 0;
   }
-  .timeline-line {
-    left: 20px;
-    width: 4px;
-  }
-  .timeline-item,
-  .timeline-item-left,
-  .timeline-item-right {
-    width: 100%;
-    left: 0;
+  .experience-modern-duration-minimal {
     text-align: left;
-    padding: 2rem 0 2rem 50px;
-  }
-  .timeline-content {
-    min-width: 0;
-    max-width: 98vw;
-    padding: 1.2rem 1rem;
-  }
-  .timeline-dot {
-    left: 20px;
-    right: auto;
-    transform: translate(-50%, 0);
-    top: 2rem;
+    min-width: unset;
+    margin-top: 0.2rem;
   }
 }
 

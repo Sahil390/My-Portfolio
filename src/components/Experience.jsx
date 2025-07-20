@@ -1,48 +1,80 @@
 import React from 'react';
 import '../App.css';
+import workExperienceVideo from '../assets/work_Experiance.mp4';
 
-const experiences = [
+const internships = [
   {
-    role: "Frontend Developer",
-    company: "Tech Solutions Pvt. Ltd.",
-    duration: "Jul 2024 - Present",
-    desc: "Working on modern web applications using React.js, Redux, and Material-UI. Built and maintained scalable UI components and collaborated with cross-functional teams."
+    role: "Web Developer Intern",
+    company: "VirtualEnvi",
+    duration: "Jun 2025 - Present"
+  }
+];
+
+const volunteers = [
+  {
+    role: "Member",
+    company: "OPEN Community",
+    duration: "Feb 2025 - July 2025"
   },
   {
-    role: "Core Member, Coding Club",
+    role: "Batch Representative",
     company: "UPES ACM Student Chapter",
-    duration: "2022 - 2024",
-    desc: "Organized coding events, mentored juniors, and contributed to club projects and hackathons."
-  },
-  {
-    role: "Volunteer, Tech Fest",
-    company: "UPES",
-    duration: "2023",
-    desc: "Assisted in event management and technical support for university tech fest."
+    duration: "Sep 2023 - May 2024"
   }
 ];
 
 function Experience() {
   return (
     <section className="experience-section" id="Experience">
-      <h2 className="experience-title">Experience</h2>
-      <div className="timeline-container">
-        <div className="timeline-line"></div>
-        {experiences.map((exp, idx) => (
-          <div
-            className={`timeline-item ${idx % 2 === 0 ? 'timeline-item-left' : 'timeline-item-right'}`}
-            key={idx}
-            style={{ top: `${idx * 50}px` }}
-          >
-            <div className="timeline-dot"></div>
-            <div className="timeline-content">
-              <div className="timeline-role">{exp.role}</div>
-              <div className="timeline-company">{exp.company}</div>
-              <div className="timeline-duration">{exp.duration}</div>
-              <div className="timeline-desc">{exp.desc}</div>
-            </div>
-          </div>
-        ))}
+      <div className="experience-flex">
+        {/* Left: Video */}
+        <div className="experience-right-placeholder">
+          <video
+            src={workExperienceVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="experience-video"
+            style={{ width: '70%', maxWidth: 350, borderRadius: 18 }}
+          />
+        </div>
+        {/* Right: Experience List */}
+        <div className="experience-list-modern">
+          <h2 className="experience-title">My Experience</h2>
+          {/* Internship Section */}
+          <h3 className="experience-subtitle">Internship</h3>
+          {internships.map((exp, idx) => (
+            <React.Fragment key={idx}>
+              <div className="experience-modern-row-minimal">
+                <div>
+                  <div className="experience-modern-role-minimal">{exp.role}</div>
+                  <div className="experience-modern-company-minimal">{exp.company}</div>
+                </div>
+                <div className="experience-modern-duration-minimal">{exp.duration}</div>
+              </div>
+              {idx !== internships.length - 1 && (
+                <hr className="experience-divider-minimal" />
+              )}
+            </React.Fragment>
+          ))}
+          {/* Volunteer Section */}
+          <h3 className="experience-subtitle experience-volunteer-subtitle">Volunteer</h3>
+          {volunteers.map((exp, idx) => (
+            <React.Fragment key={idx}>
+              <div className="experience-modern-row-minimal">
+                <div>
+                  <div className="experience-modern-role-minimal">{exp.role}</div>
+                  <div className="experience-modern-company-minimal">{exp.company}</div>
+                </div>
+                <div className="experience-modern-duration-minimal">{exp.duration}</div>
+              </div>
+              {idx !== volunteers.length - 1 && (
+                <hr className="experience-divider-minimal" />
+              )}
+            </React.Fragment>
+          ))}
+        </div>
       </div>
     </section>
   );

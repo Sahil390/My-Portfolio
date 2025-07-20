@@ -11,17 +11,17 @@ const Contact = () => (
         </p>
         <div className="contact-links">
           <a
-            href="mailto:youremail@example.com"
+            href="mailto:sahil.119480@stu.upes.ac.in"
             className="contact-link"
             title="Gmail"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaEnvelope size={24} style={{ marginRight: 10 }} />
-            youremail@example.com
+            sahil.119480@stu.upes.ac.in
           </a>
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/sahil-narang-6600b11bb/"
             className="contact-link"
             title="LinkedIn"
             target="_blank"
@@ -31,7 +31,7 @@ const Contact = () => (
             LinkedIn
           </a>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/Sahil390"
             className="contact-link"
             title="GitHub"
             target="_blank"
