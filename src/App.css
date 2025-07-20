@@ -89,21 +89,21 @@
 
 /* --- Projects section styles (Redesigned) --- */
 .projects-section {
-  /* Merged into skill-progress-section, so make background transparent */
   background: #333646;
-  box-shadow: none; /* Remove any shadows */
+  position: relative;
+  box-shadow: none; 
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
-  /* Add top padding to separate from skills, and bottom padding */
-  /* padding: 8vw 6vw 6vw 0; */
-  margin-top: 100px;
   height: 70vw;
+  top: -65px; 
+  z-index: 10;
 }
 .projects-title {
   font-size: 2.8rem;
   color: #fffbe6;
+  margin-top: 100px;
   margin-bottom: 2.5rem;
   letter-spacing: 2px;
   font-weight: 700;
@@ -382,14 +382,14 @@
   background: #242734;
   margin-top: 0vw;
   padding: 6vw 0 0 0; /* Restore top padding, bottom padding comes from Projects */
-  min-height: 110vh; /* Let content determine height */
+  min-height: 120vh; /* Let content determine height */
   display: flex;
   flex-direction: column;
   align-items: center;
   pointer-events: auto;
   box-shadow: 0 -40px 80px -30px #242734cc;
-  border-radius: 80px 80px 0 0;
-  top: -60px;
+  border-radius: 100px 100px 0 0;
+  /* top: -60px; */
 }
 
 .skill-title {
@@ -801,7 +801,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 /* Hero Component */
 
 .hero-container {
-  position: relative;
+  position: sticky;
   top: 0;
   color: #ffffff;
   display: flex; /* Use flexbox for alignment */
@@ -1306,13 +1306,15 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 /* --- Experience Timeline Section Styles --- */
 .experience-section {
   background: #242734;
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 6vw 0 6vw 0;
-  margin-top: 0;
-  box-shadow: 0 -40px 80px -30px #242734cc;
+  top: -65px;
+  
+  z-index: 10;
 }
 
 .experience-title {
