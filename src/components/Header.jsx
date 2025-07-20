@@ -36,7 +36,8 @@ const Header = () => {
         </div>
         <nav className="nav-links">
           <a href="#Skills">Skills</a>
-          <a href="#Projectes">Projectes</a>
+          <a href="#Projects">Projects</a>
+          <a href='#Experience'>Experience</a>
           <a href="#Contact">Contact</a>
         </nav>
         <div className="menu-icon" onClick={toggleMenu}>
@@ -50,7 +51,8 @@ const Header = () => {
         <div className="close-icon" onClick={toggleMenu}>&times;</div>
         <nav className="side-panel-links">
           <a href="#Skills" onClick={toggleMenu}>Skills</a>
-          <a href="#Projectes" onClick={toggleMenu}>Projectes</a>
+          <a href="#Projects" onClick={toggleMenu}>Projects</a>
+          <a href="#Experience" onClick={toggleMenu}>Experience</a>
           <a href="#Contact" onClick={toggleMenu}>Contact</a>
         </nav>
       </div>

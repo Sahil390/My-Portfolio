@@ -4,7 +4,7 @@ import '../App.css';
 
 function Projects() {
   return (
-    <section className="projects-section" id="Projectes">
+    <section className="projects-section" id="Projects">
       <h2 className="projects-title">Projects</h2>
       <div className="projects-list-modern">
         {/* Project 1 */}

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+// import Projects from './Projects';
 
 
 const skillsData = [
@@ -178,6 +179,7 @@ function SkillProgress() {
           );
         })}
       </div>
+      {/* <Projects /> */}
     </section>
   );
 }
