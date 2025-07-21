@@ -719,6 +719,24 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   box-shadow: 0 2px 12px #0003;
   position: relative;
 }
+.skill-bar-row:hover {
+  background: #181a22;
+  padding: 12px;
+  border-radius: 8px; 
+  box-shadow: 0 2px 12px #0003;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.35s cubic-bezier(.77,0,.18,1), background 0.35s, box-shadow 0.35s, padding 0.35s;
+  transform: translateY(-8px) scale(1.03);
+}
+
+/* Smoothly animate other rows when one is hovered */
+.skill-bar-row {
+  transition: transform 0.35s cubic-bezier(.77,0,.18,1), background 0.35s, box-shadow 0.35s, padding 0.35s;
+}
+.skill-bar-row:hover ~ .skill-bar-row {
+  transform: translateY(12px);
+}
 
 /* .skill-desc-content {
   flex: 1;
