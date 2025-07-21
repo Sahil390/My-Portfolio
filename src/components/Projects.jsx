@@ -1,22 +1,24 @@
 import React from 'react';
 import '../App.css';
+import QuickNote from '../assets/Project/Quick_Note.png';
+import WebGen from '../assets/Project/WebGenerator.png';
 
 const projects = [
   {
-    image: "https://i.imgur.com/6X8Q4Qp.png",
-    category: "Entertainment Technology | June 2022",
-    title: "Calc Quest – A Calculator game",
-    desc: "Calc Quest – A Calculator Game where each puzzle transforms ordinary calculations into extraordinary challenges! Use your wits and the unique calculator functions to solve progressively harder levels.",
-    github: "https://github.com/Sahil390/calc-quest",
-    live: "https://play.google.com/store/apps/details?id=com.calcquest.app"
+    image: QuickNote,
+    category: "Productivity | Work in Progress",
+    title: "Quick Note – Note-taking App ",
+    desc: "Quick Note – A sleek and modern note-taking application built with React, Redux, and Material-UI that helps you organize your thoughts, ideas, and tasks efficiently.",
+    github: "https://github.com/Sahil390/quick-note",
+    live: "https://sahilquicknotes.netlify.app/"
   },
   {
-    image: "https://i.imgur.com/8Km9tLL.png",
-    category: "Finance | 2023",
-    title: "Dummy Share Market",
-    desc: "Simulate stock trading without risking a dime. Learn the market's intricacies, in your own time.",
-    github: "https://github.com/Sahil390/dummy-share-market",
-    live: "https://dummy-share-market.web.app/"
+    image: WebGen,
+    category: "Productivity | 2025",
+    title: "WebGener – Website Generator",
+    desc: "A modern, responsive web application that generates beautiful websites using AI. Built with React, TypeScript, and powered by Google's Gemini AI.",
+    github: "https://github.com/Sahil390/WebGenerator",
+    live: "https://websgenerator.netlify.app/"
   },
   {
     image: "https://i.imgur.com/1NqZQ2p.png",
@@ -41,7 +43,7 @@ function Projects() {
     <section className="projects-section" id="Projects">
       <h2 className="projects-title">Projects</h2>
       <div className="projects-tile-grid">
-        {projects.map((proj, idx) => (
+        {projects.slice(0, 2).map((proj, idx) => (
           <div className="project-tile-card" key={idx}>
             <div className="project-tile-image">
               <img src={proj.image} alt={proj.title} />
