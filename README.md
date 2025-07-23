@@ -40,7 +40,7 @@ Feel free to reach out for collaboration, job opportunities, or just to connect!
 
 ## 🌐 Live Demo
 
-Check out the live portfolio: [https://your-live-portfolio-link.com](https://your-live-portfolio-link.com)
+Check out the live portfolio: [https://sahilnarang.netlify.app](https://sahilnarang.netlify.app)
 
 ---
 
