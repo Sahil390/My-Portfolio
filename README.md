@@ -1,12 +1,47 @@
-# React + Vite
+# Sahil Narang's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal developer portfolio!  
+This project showcases my skills, experience, and selected projects as a web developer. Built with **React** and **Vite**, it features a modern, responsive design and interactive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- **Responsive Design:** Looks great on all devices.
+- **Animated Project Showcase:** Expandable project section with smooth animations.
+- **Contact Form:** Send me a message directly via EmailJS.
+- **Experience & Skills:** Highlights my professional journey and technical expertise.
+- **Social Links:** Quick access to my LinkedIn, GitHub, and email.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [EmailJS](https://www.emailjs.com/) (for contact form)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [Three.js](https://threejs.org/) & [Vanta.js](https://www.vantajs.com/) (for visual effects)
+
+---
+
+
+
+## ✉️ Contact
+
+- **Email:** sahil.119480@stu.upes.ac.in
+- **LinkedIn:** [Sahil Narang](https://www.linkedin.com/in/sahil-narang-6600b11bb/)
+- **GitHub:** [Sahil390](https://github.com/Sahil390)
+
+Feel free to reach out for collaboration, job opportunities, or just to connect!
+
+---
+
+
+## 🌐 Live Demo
+
+Check out the live portfolio: [https://your-live-portfolio-link.com](https://your-live-portfolio-link.com)
+
+---
+
+> Built with ❤️

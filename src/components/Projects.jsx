@@ -22,31 +22,34 @@ const projects = [
   },
   {
     image: "https://private-user-images.githubusercontent.com/71542605/369766542-56794b76-3993-4079-9afa-1b4b96f873f9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTMyNDUwMjgsIm5iZiI6MTc1MzI0NDcyOCwicGF0aCI6Ii83MTU0MjYwNS8zNjk3NjY1NDItNTY3OTRiNzYtMzk5My00MDc5LTlhZmEtMWI0Yjk2Zjg3M2Y5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA3MjMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNzIzVDA0MjUyOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTI5MjM4ZjA4MDIxZWFiMjc5ZmJhZDVjNGEyMTQwN2Q1ZjFkYWIzMTMwY2Q2ZDY3MDJhZjgzNjUwZmZhY2ExNTYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.sb4Vmvh3QClxC4mGx1Eg4pnS7_y2YnDhjWiRzGz-q_4",
-    category: "Productivity | Jan 2024",
+    category: "Productivity | Sep 2024",
     title: "Text Summarizer – AI-Powered Text Summarization",
     desc: "A modern, responsive web application that summarizes text using the Gemini API.",
     github: "https://github.com/Sahil390/Text-summariser",
     live: "https://text-summariser-ae95.onrender.com/"
   },
   {
-    image: "https://i.imgur.com/3XQZQ2p.png",
-    category: "Education | Mar 2024",
-    title: "QuizMaster – Online Quiz Platform",
-    desc: "Create, share, and take quizzes with instant feedback and analytics. Designed for students and teachers.",
-    github: "https://github.com/Sahil390/quizmaster",
-    live: "https://quizmaster-app.web.app/"
+    image: "https://private-user-images.githubusercontent.com/71542605/369767297-34c9db04-86de-40da-ab0d-727b2843cf30.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTMyNTgzMjEsIm5iZiI6MTc1MzI1ODAyMSwicGF0aCI6Ii83MTU0MjYwNS8zNjk3NjcyOTctMzRjOWRiMDQtODZkZS00MGRhLWFiMGQtNzI3YjI4NDNjZjMwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA3MjMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNzIzVDA4MDcwMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWVjODgxMDI2ZmQ5ZTExMzZhNTQ0OGI0ZmVjNGM4Y2MzOTA2ZTY4YjM3ZDVhYTRlMTViMTNhZTAwNDU2MmJmZGMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.as32clB7uj78YodAeVRMm-ZhBoBCHQIIRjsqtBNEVTM",
+    category: "Education | Jul 2022",
+    title: "SuperPad-Text-Editor – Collaborative Text Editing",
+    desc: "This is a simple Python project where I build a basic text editor named SuperPad with a few additional features like a todo list and calculator.",
+    github: "https://github.com/Sahil390/SuperPad-Text-Editor",
+    live: "https://www.youtube.com/watch?v=uCH11M75p8w"
   }
 ];
 
 function Projects() {
   const [showAll, setShowAll] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const wrapperRef = useRef(null);
 
   // Animate section height
   useEffect(() => {
     if (showAll) {
       setExpanded(true);
+    } else {
+      // Wait for tile animation to finish before collapsing height
+      const timeout = setTimeout(() => setExpanded(false), 0);
+      return () => clearTimeout(timeout);
     }
   }, [showAll]);
 
@@ -55,7 +58,6 @@ function Projects() {
       <h2 className="projects-title">Projects</h2>
       <div
         className={`projects-expand-wrapper${expanded ? ' expanded' : ''}`}
-        ref={wrapperRef}
       >
         <div className="projects-tile-grid">
           {projects.map((proj, idx) => {
@@ -111,14 +113,24 @@ function Projects() {
           </button>
         )}
         {showAll && (
-          <a
-            href="https://github.com/Sahil390?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="explore-more-btn"
-          >
-            Explore More on GitHub ↗
-          </a>
+          <>
+            <button
+              className="explore-more-btn"
+              onClick={() => setShowAll(false)}
+              title="Show Less"
+              style={{ fontSize: "1.5rem", padding: "0.5em 1em" }}
+            >
+              ▲
+            </button>
+            <a
+              href="https://github.com/Sahil390?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="explore-more-btn"
+            >
+              Explore More on GitHub ↗
+            </a>
+          </>
         )}
       </div>
     </section>
