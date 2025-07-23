@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import '../App.css';
 import QuickNote from '../assets/Project/Quick_Note.png';
 import WebGen from '../assets/Project/WebGenerator.png';
@@ -40,57 +40,86 @@ const projects = [
 
 function Projects() {
   const [showAll, setShowAll] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const wrapperRef = useRef(null);
 
-  const visibleProjects = showAll ? projects : projects.slice(0, 2);
+  // Animate section height
+  useEffect(() => {
+    if (showAll) {
+      setExpanded(true);
+    }
+  }, [showAll]);
 
   return (
     <section className="projects-section" id="Projects">
       <h2 className="projects-title">Projects</h2>
-      <div className="projects-tile-grid">
-        {visibleProjects.map((proj, idx) => (
-          <div className="project-tile-card" key={idx}>
-            <div className="project-tile-image">
-              <img src={proj.image} alt={proj.title} />
-              {proj.category.includes("Work in Progress") && (
-                <div className="work-progress-overlay">Working</div>
-              )}
-            </div>
-            <div className="project-tile-content">
-              <div className={
-                "project-tile-category" +
-                (proj.category.includes("Work in Progress") ? " work-in-progress-label" : "")
-              }>
-                {proj.category}
+      <div
+        className={`projects-expand-wrapper${expanded ? ' expanded' : ''}`}
+        ref={wrapperRef}
+      >
+        <div className="projects-tile-grid">
+          {projects.map((proj, idx) => {
+            const shouldReveal = showAll || idx < 2;
+            return (
+              <div
+                className={
+                  "project-tile-card" +
+                  (!shouldReveal ? " project-tile-hidden" : "") +
+                  (showAll && idx > 1 ? " project-tile-reveal" : "")
+                }
+                key={idx}
+                style={{
+                  transitionDelay: showAll && idx > 1 ? `${0.15 * (idx - 1)}s` : '0s'
+                }}
+              >
+                <div className="project-tile-image">
+                  <img src={proj.image} alt={proj.title} />
+                  {proj.category.includes("Work in Progress") && (
+                    <div className="work-progress-overlay">Working</div>
+                  )}
+                </div>
+                <div className="project-tile-content">
+                  <div className={
+                    "project-tile-category" +
+                    (proj.category.includes("Work in Progress") ? " work-in-progress-label" : "")
+                  }>
+                    {proj.category}
+                  </div>
+                  <div className="project-tile-title">{proj.title}</div>
+                  <div className="project-tile-desc">{proj.desc}</div>
+                  <div className="project-tile-links">
+                    <a href={proj.github} target="_blank" rel="noopener noreferrer" className="project-tile-link">
+                      GitHub ↗
+                    </a>
+                    <a href={proj.live} target="_blank" rel="noopener noreferrer" className="project-tile-link">
+                      Live ↗
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div className="project-tile-title">{proj.title}</div>
-              <div className="project-tile-desc">{proj.desc}</div>
-              <div className="project-tile-links">
-                <a href={proj.github} target="_blank" rel="noopener noreferrer" className="project-tile-link">
-                  GitHub ↗
-                </a>
-                <a href={proj.live} target="_blank" rel="noopener noreferrer" className="project-tile-link">
-                  Live ↗
-                </a>
-              </div>
-            </div>
-          </div>
-        ))}
+            );
+          })}
+        </div>
       </div>
       <div style={{ display: "flex", justifyContent: "center", marginTop: "2.5rem", gap: "1rem" }}>
-        <button
-          className="explore-more-btn"
-          onClick={() => setShowAll((prev) => !prev)}
-        >
-          {showAll ? "See Less" : "See More Projects"}
-        </button>
-        <a
-          href="https://github.com/Sahil390?tab=repositories"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="explore-more-btn"
-        >
-          Explore More on GitHub ↗
-        </a>
+        {!showAll && (
+          <button
+            className="explore-more-btn"
+            onClick={() => setShowAll(true)}
+          >
+            See More Projects
+          </button>
+        )}
+        {showAll && (
+          <a
+            href="https://github.com/Sahil390?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="explore-more-btn"
+          >
+            Explore More on GitHub ↗
+          </a>
+        )}
       </div>
     </section>
   );
