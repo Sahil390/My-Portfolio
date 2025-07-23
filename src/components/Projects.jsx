@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 import QuickNote from '../assets/Project/Quick_Note.png';
 import WebGen from '../assets/Project/WebGenerator.png';
@@ -21,12 +21,12 @@ const projects = [
     live: "https://websgenerator.netlify.app/"
   },
   {
-    image: "https://i.imgur.com/1NqZQ2p.png",
+    image: "https://private-user-images.githubusercontent.com/71542605/369766542-56794b76-3993-4079-9afa-1b4b96f873f9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTMyNDUwMjgsIm5iZiI6MTc1MzI0NDcyOCwicGF0aCI6Ii83MTU0MjYwNS8zNjk3NjY1NDItNTY3OTRiNzYtMzk5My00MDc5LTlhZmEtMWI0Yjk2Zjg3M2Y5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA3MjMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNzIzVDA0MjUyOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTI5MjM4ZjA4MDIxZWFiMjc5ZmJhZDVjNGEyMTQwN2Q1ZjFkYWIzMTMwY2Q2ZDY3MDJhZjgzNjUwZmZhY2ExNTYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.sb4Vmvh3QClxC4mGx1Eg4pnS7_y2YnDhjWiRzGz-q_4",
     category: "Productivity | Jan 2024",
-    title: "Taskify – Smart To-Do App",
-    desc: "Organize your daily tasks with smart reminders, categories, and a clean UI. Built with React and Firebase.",
-    github: "https://github.com/Sahil390/taskify",
-    live: "https://taskify-app.web.app/"
+    title: "Text Summarizer – AI-Powered Text Summarization",
+    desc: "A modern, responsive web application that summarizes text using the Gemini API.",
+    github: "https://github.com/Sahil390/Text-summariser",
+    live: "https://text-summariser-ae95.onrender.com/"
   },
   {
     image: "https://i.imgur.com/3XQZQ2p.png",
@@ -39,17 +39,29 @@ const projects = [
 ];
 
 function Projects() {
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleProjects = showAll ? projects : projects.slice(0, 2);
+
   return (
     <section className="projects-section" id="Projects">
       <h2 className="projects-title">Projects</h2>
       <div className="projects-tile-grid">
-        {projects.slice(0, 2).map((proj, idx) => (
+        {visibleProjects.map((proj, idx) => (
           <div className="project-tile-card" key={idx}>
             <div className="project-tile-image">
               <img src={proj.image} alt={proj.title} />
+              {proj.category.includes("Work in Progress") && (
+                <div className="work-progress-overlay">Working</div>
+              )}
             </div>
             <div className="project-tile-content">
-              <div className="project-tile-category">{proj.category}</div>
+              <div className={
+                "project-tile-category" +
+                (proj.category.includes("Work in Progress") ? " work-in-progress-label" : "")
+              }>
+                {proj.category}
+              </div>
               <div className="project-tile-title">{proj.title}</div>
               <div className="project-tile-desc">{proj.desc}</div>
               <div className="project-tile-links">
@@ -63,6 +75,22 @@ function Projects() {
             </div>
           </div>
         ))}
+      </div>
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "2.5rem", gap: "1rem" }}>
+        <button
+          className="explore-more-btn"
+          onClick={() => setShowAll((prev) => !prev)}
+        >
+          {showAll ? "See Less" : "See More Projects"}
+        </button>
+        <a
+          href="https://github.com/Sahil390?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="explore-more-btn"
+        >
+          Explore More on GitHub ↗
+        </a>
       </div>
     </section>
   );
