@@ -24,20 +24,37 @@ const volunteers = [
 ];
 
 function Experience() {
+  const isMobile = window.innerWidth <= 900;
+
   return (
     <section className="experience-section" id="Experience">
-      <div className="experience-flex">
-        {/* Left: Video */}
-        <div className="experience-right-placeholder">
+      {isMobile && (
+        <>
           <video
+            className="experience-bg-video"
             src={workExperienceVideo}
             autoPlay
             loop
             muted
             playsInline
-            className="experience-video"
-            style={{ width: '70%', maxWidth: 350, borderRadius: 18 }}
           />
+          <div className="experience-bg-overlay" />
+        </>
+      )}
+      <div className="experience-flex">
+        {/* Left: Video (desktop only) */}
+        <div className="experience-right-placeholder">
+          {!isMobile && (
+            <video
+              src={workExperienceVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="experience-video"
+              style={{ width: '70%', maxWidth: 350, borderRadius: 18 }}
+            />
+          )}
         </div>
         {/* Right: Experience List */}
         <div className="experience-list-modern">
