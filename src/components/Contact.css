@@ -116,7 +116,7 @@
   color: #fffbe6;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .contact-content {
     flex-direction: column;
     gap: 2rem;

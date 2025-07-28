@@ -208,7 +208,7 @@
 
 
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .projects-slider-wrapper {
     display: flex;
     flex-direction: column;

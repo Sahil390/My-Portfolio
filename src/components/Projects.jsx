@@ -41,7 +41,7 @@ const projects = [
 ];
 
 function Projects() {
-	const isMobile = window.innerWidth <= 900;
+	const isMobile = window.innerWidth <= 768;
 	const scrollRef = useRef(null);
 	const [activeIdx, setActiveIdx] = useState(0);
 	const [showAll, setShowAll] = useState(false);

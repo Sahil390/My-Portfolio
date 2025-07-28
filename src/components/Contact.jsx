@@ -11,7 +11,7 @@ const Contact = () => {
   const form = useRef();
   const [sent, setSent] = useState(false);
   const [error, setError] = useState('');
-  const isMobile = window.innerWidth <= 900;
+  const isMobile = window.innerWidth <= 768;
 
   const sendEmail = (e) => {
     e.preventDefault();

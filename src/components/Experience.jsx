@@ -24,7 +24,7 @@ const volunteers = [
 ];
 
 function Experience() {
-  const isMobile = window.innerWidth <= 900;
+  const isMobile = window.innerWidth <= 768;
 
   return (
     <section className="experience-section" id="Experience">

@@ -182,7 +182,7 @@
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .skill-progress-section {
     border-radius: 50px 50px 0 0;
     min-height: unset !important; /* Remove forced height */

@@ -218,7 +218,7 @@
 
 
 /* Header & Navigation */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .header-container {
     padding: 1rem 2vw;
     
