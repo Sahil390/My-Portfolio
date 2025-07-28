@@ -234,7 +234,29 @@
     border-radius: 15px !important;
     padding: 0.5rem 1rem !important;
   }
-  
+  .logo {
+    margin-left: 12px;
+  }
+  .menu-icon {
+    margin-right: 12px;
+    position: relative;
+  }
+  .menu-icon.scrolled::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: rgba(36, 39, 52, 0.55);
+    backdrop-filter: blur(12px);
+    z-index: -1;
+  }
+  .menu-icon:not(.scrolled)::before {
+    content: none;
+  }
 }
 
 /* Hamburger menu for mobile */
