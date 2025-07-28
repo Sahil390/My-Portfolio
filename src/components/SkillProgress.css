@@ -30,6 +30,7 @@
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
+  padding-bottom: 0 !important;
 }
 
 /* Layout for skill box with vertical description */
@@ -184,15 +185,15 @@
 @media (max-width: 900px) {
   .skill-progress-section {
     border-radius: 50px 50px 0 0;
+    min-height: unset !important; /* Remove forced height */
+    padding-bottom: 0 !important; /* Remove any extra bottom padding */
   }
   .skill-boxes {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    /* max-width: 98vw; */
-    padding-bottom: 10%;
+    padding-bottom: 50px !important; /* Add bottom padding for mobile */
   }
   .skill-box {
     min-width: 0;
