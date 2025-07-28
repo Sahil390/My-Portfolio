@@ -51,7 +51,7 @@ const Hero = () => {
         </div>
         <div className="hero-cta">
           <a href="#Projects" className="btn-primary">View Projects</a>
-          <a href="https://upesstd-my.sharepoint.com/:b:/g/personal/sahil_119480_stu_upes_ac_in/Ef8IZ1C2zRVIswe-vSnAfNkBFjMZhFy3PyxkZQ3YbBGgqw?e=kwy48F" className="btn-secondary" target="_blank" rel="noopener noreferrer">Download Resume</a>
+          <a href="https://upesstd-my.sharepoint.com/:b:/g/personal/sahil_119480_stu_upes_ac_in/Efk61P51CHNJrn0MbOuCKlQBPVdHN28NqXTv_Qs_DJCeig?e=nM3WRi" className="btn-secondary" target="_blank" rel="noopener noreferrer">Download Resume</a>
         </div>
       </div>
       <div className="hero-image-container">
