@@ -116,9 +116,6 @@
   color: #fffbe6;
 }
 
-
-
-
 @media (max-width: 900px) {
   .contact-content {
     flex-direction: column;
@@ -126,10 +123,68 @@
     max-width: 98vw;
     align-items: center;
   }
-  .contact-info-box,
-  .contact-form {
-    max-width: 98vw;
-    width: 100%;
-    padding: 1.2rem 0.5rem;
+  .contact-form-mobile {
+    max-width: 340px;
+    width: 92vw;
+    padding: 2rem 0.7rem;
+    background: #23243a;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px 0 #0004;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-form-mobile input,
+  .contact-form-mobile textarea {
+    width: 85%;         /* Reduce field width */
+    /* margin-bottom: 1rem; */
+    border-radius: 8px;
+    border: none;
+    padding: 0.6rem;
+    font-size: 0.95rem;
+    background: #333646;
+    color: #fffbe6;
+  }
+  .contact-form-mobile button {
+    width: 60%;
+    padding: 0.7rem;
+    border-radius: 8px;
+    background: #fca311;
+    color: #23243a;
+    font-weight: 700;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+  .contact-info-mobile {
+    width: 95vw;
+    max-width: 400px;
+    margin: 0 auto;
+    background: transparent;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+  .contact-info-mobile .contact-message {
+    font-size: 1.08rem;
+    color: #fffbe6;
+    margin-bottom: 1.2rem;
+  }
+  .contact-links-mobile {
+    display: flex;
+    flex-direction: row;    /* Arrange icons horizontally */
+    justify-content: center;
+    align-items: center;
+    gap: 2.2rem;
+    margin-top: 0.5rem;
+  }
+  .contact-links-mobile .contact-link {
+    color: #fca311;
+    font-size: 2rem;
+    transition: color 0.2s;
+  }
+  .contact-links-mobile .contact-link:hover {
+    color: #fffbe6;
   }
 }
