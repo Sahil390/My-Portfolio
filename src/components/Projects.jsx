@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './Projects.css';
-import QuickNote from '../assets/Project/Quick_Note.png';
-import WebGen from '../assets/Project/WebGenerator.png';
-import textedit from '../assets/Project/TextEditer.png';
-import textsummer from '../assets/Project/textsummerizer.png';
+import QuickNote from '../assets/Project/Quick_Note.webp';
+import WebGen from '../assets/Project/WebGenerator.webp';
+import textedit from '../assets/Project/TextEditer.webp';
+import textsummer from '../assets/Project/textsummerizer.webp';
 
 const projects = [
 	{

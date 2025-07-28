@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import profileImg from '../assets/sahil1.jpg';
+import profileImg from '../assets/sahil1.webp';
 import "./Hero.css";
 const Hero = () => {
   const heroRef = useRef(null);
@@ -8,21 +8,21 @@ const Hero = () => {
     let vantaEffect = null;
     
     const initVanta = () => {
-      if (window.VANTA && heroRef.current) {
-        vantaEffect = window.VANTA.WAVES({
-          el: heroRef.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00,
-          color: 0x323647,
-          waveHeight: 25.00,
-          waveSpeed: 1.30,
-          zoom: 0.65
-        });
+      if (window.innerWidth > 768 && window.VANTA && heroRef.current) {
+      vantaEffect = window.VANTA.WAVES({
+        el: heroRef.current,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x323647,
+        waveHeight: 25.00,
+        waveSpeed: 1.30,
+        zoom: 0.65
+      });
       }
     };
 
