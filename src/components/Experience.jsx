@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import './Experience.css';
 import workExperienceVideo from '../assets/work_Experiance.mp4';
 
 const internships = [

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import profileImg from '../assets/sahil1.jpg';
-
+import "./Hero.css";
 const Hero = () => {
   const heroRef = useRef(null);
 

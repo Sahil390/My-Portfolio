@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import '../App.css';
+import './Projects.css';
 import QuickNote from '../assets/Project/Quick_Note.png';
 import WebGen from '../assets/Project/WebGenerator.png';
 import textedit from '../assets/Project/TextEditer.png';

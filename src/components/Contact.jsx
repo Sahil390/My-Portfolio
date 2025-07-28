@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
+import './Contact.css';
 
 const SERVICE_ID = 'service_ztn3lt8';
 const TEMPLATE_ID = 'template_fzi7ukb';
