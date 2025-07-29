@@ -313,6 +313,23 @@
     height: 45px;
   }
 
+  .hero-cta .btn-primary,
+  .hero-cta .btn-secondary {
+    width: 36vw;
+    max-width: 140px;
+    min-width: 90px;
+    padding: 0.6rem 0.5rem;
+    font-size: 0.85rem;
+    height: 38px;
+  }
+
+  .hero-cta .btn-primary,
+  .hero-cta .btn-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .hero-image-container {
     position: fixed;
     left: 0;
