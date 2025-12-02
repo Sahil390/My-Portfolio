@@ -1,29 +1,25 @@
 import React, { useRef, useState } from 'react';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
-import emailjs from 'emailjs-com';
 import './Contact.css';
-
-const SERVICE_ID = 'service_ztn3lt8';
-const TEMPLATE_ID = 'template_fzi7ukb';
-const USER_ID = 'sxN2AcSpcFM2QNtOY';
 
 const Contact = () => {
   const form = useRef();
-  const [sent, setSent] = useState(false);
-  const [error, setError] = useState('');
-  const isMobile = window.innerWidth <= 768;
+  const [isMobile] = useState(window.innerWidth <= 768);
 
-  const sendEmail = (e) => {
+  const handleSendEmail = (e) => {
     e.preventDefault();
-    setSent(false);
-    setError('');
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, USER_ID)
-      .then(() => {
-        setSent(true);
-        form.current.reset();
-      }, (err) => {
-        setError('Failed to send message. Please try again later.');
-      });
+
+    const formData = new FormData(form.current);
+    const name = formData.get('user_name');
+    const email = formData.get('user_email');
+    const message = formData.get('message');
+
+    const subject = `Portfolio Contact from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+
+    const mailtoLink = `mailto:sahil.119480@stu.upes.ac.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
   };
 
   return (
@@ -32,13 +28,11 @@ const Contact = () => {
       <div className="contact-content">
         {isMobile ? (
           <>
-            <form className="contact-form contact-form-mobile" ref={form} onSubmit={sendEmail}>
+            <form className="contact-form contact-form-mobile" ref={form} onSubmit={handleSendEmail}>
               <input type="text" name="user_name" placeholder="Your Name" required />
               <input type="email" name="user_email" placeholder="Your Email" required />
               <textarea name="message" placeholder="Your Message" rows={5} required />
               <button type="submit">Send Message</button>
-              {sent && <div style={{ color: 'green', marginTop: '1rem' }}>Message sent successfully!</div>}
-              {error && <div style={{ color: 'red', marginTop: '1rem' }}>{error}</div>}
             </form>
             <div className="contact-info-box contact-info-mobile">
               <p className="contact-message">
@@ -114,13 +108,11 @@ const Contact = () => {
                 </a>
               </div>
             </div>
-            <form className="contact-form" ref={form} onSubmit={sendEmail}>
+            <form className="contact-form" ref={form} onSubmit={handleSendEmail}>
               <input type="text" name="user_name" placeholder="Your Name" required />
               <input type="email" name="user_email" placeholder="Your Email" required />
               <textarea name="message" placeholder="Your Message" rows={5} required />
               <button type="submit">Send Message</button>
-              {sent && <div style={{ color: 'green', marginTop: '1rem' }}>Message sent successfully!</div>}
-              {error && <div style={{ color: 'red', marginTop: '1rem' }}>{error}</div>}
             </form>
           </>
         )}
